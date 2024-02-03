@@ -1,0 +1,277 @@
+@import url('./fonts/fonts.css');
+:root{
+  /* Colors */
+  --body-color:#e4e9e7;
+  --object-color:#ffffff;
+  --shadow-color:#9c9393;
+  --primary-color:#f9be50;
+  --primary-color-light:#e0b95e;
+  --toggle-color:#a1a1a4;
+  --text-color:#413f3f;
+  --table-border:#e8e7e7; 
+  /* Transitions */
+  --tran-01: all 0.2s ease;
+  --tran-02: all 0.3s ease;
+  --tran-03: all 0.4s ease;
+  --tran-04: all 0.5s ease;
+
+}
+body.dark{
+    /* Colors */
+    --body-color:#232425;
+    --object-color:#464748;
+    --shadow-color:#ada7a7;
+    --primary-color:#493d33;
+    --primary-color-light:#67503e;
+    --toggle-color:#FFF;
+    --text-color:#d7d0d0;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  transition: var(--tran-04);
+  height: 100vh;
+  background: var(--body-color);
+  color: var(--text-color);
+}
+#root{
+  height: 100%;
+}
+/* === Card === */
+.card {
+  
+  box-shadow:var(--shadow-color) 0px 2px 8px 0px;
+  background-color: var(--object-color);
+  border-radius: 8px;
+  padding: 12px;
+}
+.card *{
+  padding: 5px;
+}
+.card-header {
+  height: 60px;
+  border-radius: 6px;
+  width: 99%;
+  background-color: var(--body-color);
+}
+/* === Modal === */
+.overlay{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(22, 21, 21, 0.5);
+  z-index: 120;
+  .modal{
+    position: relative;
+    width: 640px;
+    height: 480px;
+    background-color: var(--object-color);
+    z-index: 120;
+    border-radius: 6px;
+    #modalCloser {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      height: 25px;
+      width: 25px;
+      background-color: var(--body-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--text-color);
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 150;
+    }
+  }
+}
+.overlay .DialogModal{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  width: 640px;
+  background-color: var(--object-color);
+  z-index: 120;
+  border-radius: 6px;
+  animation: animDialog;
+  animation-duration: 0.5s;
+  .actions-btn{
+    display: flex;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 7px;
+    .btn{
+      display: flex;
+      gap: 9px;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      min-width: 60px;
+      &.fa-close{
+        background-color:transparent;
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px){
+  .overlay .modal,.overlay .DialogModal{
+    width: 97%;
+  }
+}
+/* === Tables style === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text-color);
+  background-color: var(--object-color);
+}
+/* table-border */
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--table-border);
+}
+tbody tr td:not(:last-child) {
+  border-left: 1px solid var(--table-border);
+}
+/* style tr, td, th */
+tr th {
+  font-weight: bold;
+  font-size: 23px;
+  background-color: var(--primary-color-light);
+}
+th,
+td {
+  padding: 16px;
+  text-align: center;
+}
+/* even and odd color */
+tbody tr:nth-child(odd) {
+  background-color:var(--object-color);
+}
+tbody tr:nth-child(even) {
+  background-color: var(--body-color);
+}
+.list-card .fa-close{
+  height: 25px;
+  margin: auto;
+  cursor: pointer;
+  width: 25px;
+  background: #e74c3c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+/* === Buttons === */
+.btn {
+  appearance: none;
+    -webkit-appearance: none;
+  font-family: sans-serif;
+  cursor: pointer;
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  border: 0px;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+     transition: background-color 100ms linear;
+}
+
+.btn:focus, .btn.focus {
+  outline: 0;
+}
+
+.btn-round-1 {
+  border-radius: 8px;
+}
+
+.btn-round-2 {
+  border-radius: 20px;
+}
+
+.btn-dark {
+  background: #000;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  background: #212121;
+  color: #ffffff;
+}
+
+.btn-light {
+  background: #ededed;
+  color: #000;
+}
+
+.btn-light:hover {
+  background: #dbdbdb;
+  color: #000;
+}
+
+.btn-primary {
+  background: #3498db;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #2980b9;
+  color: #ffffff;
+}
+
+.btn-success {
+  background: #2ecc71;
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+.btn-warning {
+  background: #f1c40f;
+  color: #ffffff;
+}
+
+.btn-warning:hover {
+  background: #f39c12;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+  color: #ffffff;
+}
+
+@keyframes animDialog{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

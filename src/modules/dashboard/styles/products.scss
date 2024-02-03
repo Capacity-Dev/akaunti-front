@@ -1,0 +1,81 @@
+
+.products .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    
+
+    .fas {
+        cursor: pointer;
+        color: white;
+        display: flex;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        justify-content: center;
+
+        &.fa-pen {
+            background-color: #3498db;
+        }
+
+        &.fa-close {
+            background-color: #e74c3c;
+        }
+    }
+}
+.critical{
+    background-color: #e1675a;
+}
+.action-bar {
+    border-radius: 10px;
+    display: flex;
+    height: 60px;
+    margin-bottom: 25px;
+    background-color: var(--object-color);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+    >* {
+        height: 100%;
+    }
+
+    .search-bar {
+        width: 50%;
+
+    }
+    input,select {
+        border: 0;
+        outline: none;
+        border-radius: 10px;
+        padding-left: 15px;
+        background-color: var(--body-color);
+        columns: var(--text-color);
+        font-weight: 600;
+        font-size: 1.2rem;
+        width: 100%;
+        height: 100%;
+    }
+    .buttons-bar{
+        display: flex;
+        align-items: center;
+        .btn{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            height: 70%;
+        }
+    }
+
+}
+
+.react-datepicker-wrapper{
+    height: 100%;
+    .react-datepicker__input-container{
+        height: 100%;
+
+    }
+}

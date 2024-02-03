@@ -1,0 +1,140 @@
+#pos-container{
+  color: white;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}
+:root {
+  --hight: 80px;
+  --chocolat: #6f7774;
+  --bgbody: #dfd7de;
+  --blue: #1772c3;
+  --bgHero: #01414a;
+  /* Colors */
+  --input-color:#9fa3a1;
+  --object-color:#ffffff;
+  --shadow-color:#9c9393;
+  --primary-color:#f9be50;
+  --primary-color-light:#e0b95e;
+  --toggle-color:#a1a1a4;
+  --text-color:#413f3f;
+  --table-border:#e8e7e7; 
+  /* Transitions */
+  --tran-01: all 0.2s ease;
+  --tran-02: all 0.3s ease;
+  --tran-03: all 0.4s ease;
+  --tran-04: all 0.5s ease;
+}
+
+.disabled{
+  pointer-events: none;
+}
+.d-flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.flex-column {
+  flex-direction: column;
+}
+input {
+  color: black;
+}
+
+.p-10 {
+  padding: 10px;
+}
+.overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(22, 21, 21, 0.5);
+  z-index: 120;
+  .modal {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    background-color: #f5eded;
+    animation: fromBotton .10s ;
+    z-index: 120;
+    border-radius: 6px;
+    .fas{
+      cursor: pointer;
+    }
+    #modalCloser {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      height: 25px;
+      width: 25px;
+      background-color: var(--input-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: red;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 150;
+    }
+  }
+}
+@media screen and (max-width: 700px){
+    .overlay .modal{
+      width: 97%;
+    }
+  }
